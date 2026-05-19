@@ -1,0 +1,30 @@
+@import "tailwindcss";
+@keyframes lightMove {
+  0%{
+    left:-100px;
+  }
+
+  100%{
+    left:110%;
+  }
+}
+
+.animate-light{
+  animation:lightMove 6s linear infinite;
+}
+
+.text-shadow:hover{
+  text-shadow:
+  0 0 10px rgba(255,255,255,.8),
+  0 0 20px rgba(255,255,255,.5);
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(-120%);
+  }
+
+  100% {
+    transform: translateX(320%);
+  }
+}
