@@ -67,13 +67,14 @@ export default function Hero() {
         {/* Top Text */}
         <p
           className="
-          text-green-400
-          tracking-[4px]
-          text-sm
-          md:text-lg
-          font-medium
-          mb-10
-        "
+font-['Orbitron']
+text-cyan-300
+tracking-[6px]
+text-sm
+md:text-base
+uppercase
+font-medium
+"
         >
           • #Innovate • #Build • #Evolve
         </p>
@@ -82,12 +83,20 @@ export default function Hero() {
         {/* Main Heading */}
         <h1
           className="
-          text-white
-          text-6xl
-          md:text-8xl
-          font-extrabold
-          leading-tight
-        "
+  font-['Orbitron']
+text-white
+text-7xl
+md:text-[140px]
+font-black
+tracking-[10px]
+leading-none
+uppercase bg-gradient-to-r
+from-white
+via-cyan-100
+to-cyan-300
+bg-clip-text
+text-transparent
+"
         >
           Vidyut
         </h1>
@@ -109,14 +118,18 @@ export default function Hero() {
   >
     <span
   className="
-  bg-gradient-to-r
-  from-cyan-300
-  via-cyan-400
-  to-blue-500
-  bg-clip-text
-  text-transparent
-  drop-shadow-[0_0_px_#22d3ee]
-  "
+font-['Exo_2']
+text-4xl
+md:text-7xl
+font-bold
+tracking-[4px]
+italic bg-gradient-to-r
+from-cyan-300
+via-blue-400
+to-cyan-200
+bg-clip-text
+text-transparent
+"
 >
   The Electric Edge
     </span>
@@ -162,14 +175,17 @@ export default function Hero() {
         {/* Description */}
         <p
           className="
-          mt-10
-          text-gray-300
-          text-lg
-          md:text-2xl
-          leading-relaxed
-          max-w-4xl
-          mx-auto
-        "
+mt-10
+font-['Space_Grotesk']
+text-gray-300
+text-lg
+md:text-2xl
+leading-relaxed
+max-w-4xl
+mx-auto
+font-light
+tracking-wide
+"
         >
           Experience the future of innovation with EV technology,
           robotics, AI, startup culture and futuristic engineering.
@@ -208,6 +224,11 @@ export default function Hero() {
     duration-500
     hover:scale-105
     hover:shadow-[0_0_25px_rgba(34,211,238,0.45)]
+    font-['Exo_2']
+tracking-[2px]
+uppercase
+font-semibold
+    
     "
   >
 

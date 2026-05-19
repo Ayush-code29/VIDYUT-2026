@@ -54,7 +54,18 @@ return ( <div className="w-full flex justify-center bg-linear-to-b from-[#1c1c1c
               className="group relative cursor-pointer"
             >
               <span
-                className="text-[26px] text-gray-400 font-semibold transition-all duration-300 group-hover:text-white group-hover:[text-shadow:0_0_10px_white]"
+                className="
+font-['Orbitron']
+text-[18px]
+tracking-[3px]
+uppercase
+text-gray-300
+font-medium
+transition-all
+duration-300
+group-hover:text-cyan-300
+group-hover:scale-105
+"
               >
                 {item}
               </span>

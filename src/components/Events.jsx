@@ -81,7 +81,16 @@ export default function Events() {
 
       {/* Heading */}
       {/* Heading */}
-<div className="relative z-10 text-center">
+<div className="
+font-['Orbitron']
+text-center
+text-white
+text-6xl
+md:text-8xl
+font-black
+leading-tight
+tracking-tight
+">
 
   {/* Small Top Text */}
   <div className="relative inline-block">
@@ -176,15 +185,23 @@ export default function Events() {
   {/* Description */}
   <p
     className="
-    mt-10
-    text-gray-300
-    text-lg
-    md:text-2xl
-    max-w-4xl
-    mx-auto
-    leading-relaxed
-    font-light
-  "
+mt-10
+font-['Space_Grotesk']
+text-gray-300
+text-lg
+md:text-2xl
+max-w-4xl
+mx-auto
+leading-relaxed
+font-light
+tracking-wide
+bg-gradient-to-r
+from-cyan-300
+to-blue-400
+bg-clip-text
+text-transparent
+font-medium
+"
   >
     Experience the future of innovation through
     <span className="text-cyan-300 font-medium">
