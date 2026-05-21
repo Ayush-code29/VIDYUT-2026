@@ -2,7 +2,7 @@ import React from 'react'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import Events from './components/Events';
-import Achievements from './components/acheivements';
+import Achievements from './components/Acheivements';
 let body = document.querySelector("body");
 
 body.style.backgroundImage = "url('new-background.jpg')";
