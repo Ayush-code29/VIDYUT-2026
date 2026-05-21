@@ -37,3 +37,45 @@
     filter: hue-rotate(360deg);
   }
 }
+/* Navigation Buttons */
+
+.achievementSwiper .swiper-button-next,
+.achievementSwiper .swiper-button-prev {
+  color: #67e8f9;
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(10px);
+  width: 55px;
+  height: 55px;
+  border-radius: 999px;
+  border: 1px solid rgba(103,232,249,0.3);
+  transition: 0.4s;
+}
+
+.achievementSwiper .swiper-button-next:hover,
+.achievementSwiper .swiper-button-prev:hover {
+  background: rgba(34,211,238,0.2);
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(34,211,238,0.4);
+}
+
+/* Arrow size */
+
+.achievementSwiper .swiper-button-next::after,
+.achievementSwiper .swiper-button-prev::after {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* Pagination Dots */
+
+.achievementSwiper .swiper-pagination-bullet {
+  background: rgba(255,255,255,0.4);
+  width: 12px;
+  height: 12px;
+  opacity: 1;
+}
+
+.achievementSwiper .swiper-pagination-bullet-active {
+  background: #22d3ee;
+  box-shadow: 0 0 15px #22d3ee;
+}
