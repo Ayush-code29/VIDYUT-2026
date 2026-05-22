@@ -38,6 +38,7 @@ export default function Events() {
 
   return (
     <section
+    id="events"
       className="
       relative
       min-h-screen

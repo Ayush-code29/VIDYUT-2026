@@ -2,18 +2,18 @@ import React, { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import logo from "./logo.png";
-import './index.css'
+import "./index.css";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
   const menuItems = [
-    "HOME",
-    "ABOUT",
-    "PROJECTS",
-    "EVENTS",
-    "TEAM",
+    { name: "HOME", id: "home" },
+    { name: "EVENTS", id: "events" },
+    { name: "PROJECTS", id: "projects" },
+    { name: "TEAM", id: "team" },
+    { name: "CONTACT", id: "contact" },
   ];
 
   useEffect(() => {
@@ -36,7 +36,7 @@ export default function Navbar() {
       top-0
       left-0
       w-full
-      z-50
+      z-[9999]
       flex
       justify-center
       px-4
@@ -45,7 +45,7 @@ export default function Navbar() {
     >
       <nav
         className={`
-        absolute top-0
+        relative
         w-full
         max-w-7xl
         h-[85px]
@@ -57,7 +57,7 @@ export default function Navbar() {
         items-center
         justify-between
         px-8
-        overflow-hidden
+        overflow-visible
 
         ${
           scrolled
@@ -66,7 +66,7 @@ export default function Navbar() {
         }
         `}
       >
-        {/* Animated Glow */}
+        {/* Glow */}
         <div
           className="
           absolute
@@ -77,23 +77,15 @@ export default function Navbar() {
           h-[300px]
           bg-cyan-400/10
           blur-[120px]
-          pointer-events-none
           "
         />
 
         {/* Logo */}
-        <motion.div
-          whileHover={{ scale: 1.05 }}
-          className="flex items-center gap-4 z-20"
-        >
+        <div className="flex items-center gap-4 z-20">
           <img
             src={logo}
-            alt="logo"
-            className="
-            w-16
-            h-16
-            object-contain
-            "
+            alt=""
+            className="w-16 h-16 object-contain"
           />
 
           <div className="hidden sm:block">
@@ -121,7 +113,7 @@ export default function Navbar() {
               EVOLUTION OF TECH
             </p>
           </div>
-        </motion.div>
+        </div>
 
         {/* Desktop Menu */}
         <div
@@ -139,11 +131,14 @@ export default function Navbar() {
             <motion.div
               key={index}
               whileHover={{ y: -2 }}
-              className="
-              group
-              relative
-              cursor-pointer
-              "
+              className="group relative cursor-pointer"
+              onClick={() => {
+                document
+                  .getElementById(item.id)
+                  ?.scrollIntoView({
+                    behavior: "smooth",
+                  });
+              }}
             >
               <span
                 className="
@@ -158,10 +153,9 @@ export default function Navbar() {
                 group-hover:text-cyan-300
                 "
               >
-                {item}
+                {item.name}
               </span>
 
-              {/* Animated Underline */}
               <div
                 className="
                 absolute
@@ -173,43 +167,20 @@ export default function Navbar() {
                 transition-all
                 duration-500
                 group-hover:w-full
-                shadow-[0_0_10px_#22d3ee]
-                "
-              />
-
-              {/* Hover Glow */}
-              <div
-                className="
-                absolute
-                inset-0
-                opacity-0
-                group-hover:opacity-100
-                blur-xl
-                bg-cyan-400/10
-                transition-all
-                duration-500
                 "
               />
             </motion.div>
           ))}
         </div>
 
-        {/* Register Button */}
-        <motion.button
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
+        {/* Desktop Button */}
+        <button
           className="
           hidden
           lg:flex
-          relative
-          overflow-hidden
-          items-center
-          justify-center
           px-7
           py-3
           rounded-full
-          border
-          border-cyan-400/30
           bg-gradient-to-r
           from-cyan-400
           to-blue-500
@@ -217,45 +188,58 @@ export default function Navbar() {
           font-bold
           tracking-[2px]
           uppercase
+          hover:scale-105
           transition-all
           duration-500
-          hover:shadow-[0_0_30px_rgba(34,211,238,0.4)]
           "
         >
-          {/* Shine Effect */}
-          <span
-            className="
-            absolute
-            top-0
-            left-[-120%]
-            w-full
-            h-full
-            bg-gradient-to-r
-            from-transparent
-            via-white/30
-            to-transparent
-            skew-x-12
-            hover:left-[120%]
-            transition-all
-            duration-1000
-            "
-          />
-
-          <span className="relative z-10">
-            Register Now
-          </span>
-        </motion.button>
+          Register Now
+        </button>
 
         {/* Mobile Menu Button */}
         <button
-          onClick={() => setOpen(!open)}
+          type="button"
+          onClick={(e) => {
+            e.stopPropagation();
+            setOpen((prev) => !prev);
+          }}
           className="
           lg:hidden
+          relative
+          z-[9999]
+          flex
+          items-center
+          justify-center
+          w-12
+          h-12
+          rounded-full
+          border
+          border-cyan-400/20
+          bg-black/40
           text-white
-          z-50
           "
         >
-          {open ? <X size={34} /> : <Menu size={34} />}
+          <AnimatePresence mode="wait">
+            {open ? (
+              <motion.div
+                key="close"
+                initial={{ rotate: -90, opacity: 0 }}
+                animate={{ rotate: 0, opacity: 1 }}
+                exit={{ rotate: 90, opacity: 0 }}
+              >
+                <X size={30} />
+              </motion.div>
+            ) : (
+              <motion.div
+                key="menu"
+                initial={{ rotate: 90, opacity: 0 }}
+                animate={{ rotate: 0, opacity: 1 }}
+                exit={{ rotate: -90, opacity: 0 }}
+              >
+                <Menu size={30} />
+              </motion.div>
+            )}
+          </AnimatePresence>
         </button>
 
         {/* Mobile Menu */}
@@ -265,24 +249,20 @@ export default function Navbar() {
               initial={{ opacity: 0, y: -30 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -30 }}
-              transition={{ duration: 0.4 }}
               className="
               absolute
               top-[100px]
               left-0
               w-full
               rounded-3xl
-              border
-              border-cyan-400/20
-              bg-black/90
-              backdrop-blur-2xl
+              bg-black/95
               p-10
               flex
               flex-col
               items-center
               gap-8
               lg:hidden
-              shadow-[0_0_40px_rgba(34,211,238,0.08)]
+              z-[9998]
               "
             >
               {menuItems.map((item, index) => (
@@ -299,31 +279,20 @@ export default function Navbar() {
                   font-['Orbitron']
                   cursor-pointer
                   hover:text-cyan-300
-                  transition-all
-                  duration-300
                   "
+                  onClick={() => {
+                    document
+                      .getElementById(item.id)
+                      ?.scrollIntoView({
+                        behavior: "smooth",
+                      });
+
+                    setOpen(false);
+                  }}
                 >
-                  {item}
+                  {item.name}
                 </motion.div>
               ))}
-
-              <button
-                className="
-                mt-4
-                px-8
-                py-3
-                rounded-full
-                bg-gradient-to-r
-                from-cyan-400
-                to-blue-500
-                text-white
-                font-bold
-                tracking-[2px]
-                uppercase
-                "
-              >
-                Register Now
-              </button>
             </motion.div>
           )}
         </AnimatePresence>

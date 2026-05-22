@@ -3,6 +3,8 @@ import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import Events from './components/Events';
 import Achievements from './components/Acheivements';
+import Stats from './components/Stats';
+import Sponsors from './components/Sponsor';
 let body = document.querySelector("body");
 
 body.style.backgroundImage = "url('new-background.jpg')";
@@ -16,7 +18,7 @@ function App() {
     <>
     
     
-    <Navbar /><Hero /><Events/><Achievements/>
+    <Navbar /><Hero /><Events/><Achievements/><Stats/><Sponsors/>
     
     </>
 

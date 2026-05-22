@@ -38,6 +38,7 @@ export default function Achievements() {
 
   return (
     <section
+    id="projects"
       className="
       relative
       min-h-screen

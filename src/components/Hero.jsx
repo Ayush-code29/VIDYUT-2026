@@ -1,9 +1,11 @@
 import React from "react";
 import { motion } from "framer-motion";
+import './index.css'
 
 export default function Hero() {
   return (
     <section
+    id="Home"
       className="
       relative
       min-h-screen
@@ -146,7 +148,7 @@ export default function Hero() {
 
           <p
             className="
-            font-['Orbitron']
+            font-['Exo 2']
             text-cyan-300
             tracking-[5px]
             text-xs
