@@ -9,7 +9,7 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
 
   const menuItems = [
-    { name: "HOME", id: "home" },
+    { name: "HOME", id: "hero" },
     { name: "EVENTS", id: "events" },
     { name: "PROJECTS", id: "projects" },
     { name: "TEAM", id: "team" },
