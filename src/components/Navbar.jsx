@@ -174,27 +174,60 @@ export default function Navbar() {
         </div>
 
         {/* Desktop Button */}
-        <button
-          className="
-          hidden
-          lg:flex
-          px-7
-          py-3
-          rounded-full
-          bg-gradient-to-r
-          from-cyan-400
-          to-blue-500
-          text-white
-          font-bold
-          tracking-[2px]
-          uppercase
-          hover:scale-105
-          transition-all
-          duration-500
-          "
-        >
-          Register Now
-        </button>
+        <motion.button
+  whileHover={{ scale: 1.05 }}
+  whileTap={{ scale: 0.95 }}
+  onClick={() => {
+    document
+      .getElementById("contact")
+      ?.scrollIntoView({ behavior: "smooth" });
+  }}
+  className="
+  hidden
+  lg:flex
+  relative
+  overflow-hidden
+  items-center
+  justify-center
+  px-7
+  py-3
+  rounded-full
+  border
+  border-cyan-400/30
+  bg-gradient-to-r
+  from-cyan-400
+  to-blue-500
+  text-white
+  font-bold
+  tracking-[2px]
+  uppercase
+  transition-all
+  duration-500
+  hover:shadow-[0_0_30px_rgba(34,211,238,0.4)]
+  "
+>
+  <span
+    className="
+    absolute
+    top-0
+    left-[-120%]
+    w-full
+    h-full
+    bg-gradient-to-r
+    from-transparent
+    via-white/30
+    to-transparent
+    skew-x-12
+    hover:left-[120%]
+    transition-all
+    duration-1000
+    "
+  />
+
+  <span className="relative z-10">
+    Register Now
+  </span>
+</motion.button>
 
         {/* Mobile Menu Button */}
         <button

@@ -296,95 +296,103 @@ export default function Hero() {
           "
         >
           {/* Register Button */}
-          <button
-            className="
-            group
-            relative
-            overflow-hidden
-            px-10
-            py-4
-            rounded-full
-            bg-gradient-to-r
-            from-cyan-400
-            to-blue-500
-            text-white
-            font-['Exo_2']
-            text-lg
-            uppercase
-            tracking-[3px]
-            font-bold
-            transition-all
-            duration-500
-            hover:scale-105
-            hover:shadow-[0_0_35px_rgba(34,211,238,0.35)]
-            "
-          >
-            {/* Shine */}
-            <span
-              className="
-              absolute
-              top-0
-              left-[-120%]
-              w-full
-              h-full
-              bg-gradient-to-r
-              from-transparent
-              via-white/30
-              to-transparent
-              skew-x-12
-              group-hover:left-[120%]
-              transition-all
-              duration-1000
-              "
-            />
+          <motion.button
+  whileHover={{ scale: 1.08 }}
+  whileTap={{ scale: 0.95 }}
+  onClick={() => {
+    document
+      .getElementById("contact")
+      ?.scrollIntoView({ behavior: "smooth" });
+  }}
+  className="
+    px-8
+    py-4
+    rounded-full
+    bg-gradient-to-r
+    from-cyan-400
+    via-blue-500
+    to-purple-600
+    text-white
+    font-bold
+    tracking-[2px]
+    uppercase
+    shadow-[0_0_30px_rgba(34,211,238,0.4)]
+    hover:shadow-[0_0_50px_rgba(34,211,238,0.7)]
+    transition-all
+    duration-500
+    relative
+    overflow-hidden
+  "
+>
+  {/* Shine Effect */}
+  <span
+    className="
+      absolute
+      top-0
+      left-[-100%]
+      w-full
+      h-full
+      bg-gradient-to-r
+      from-transparent
+      via-white/30
+      to-transparent
+      skew-x-12
+      hover:left-[100%]
+      transition-all
+      duration-1000
+    "
+  />
 
-            <span className="relative z-10">
-              Register Now
-            </span>
-          </button>
+  <span className="relative z-10">
+    Register Now
+  </span>
+</motion.button>
 
           {/* Explore Button */}
           <button
-            className="
-            group
-            relative
-            overflow-hidden
-            px-10
-            py-4
-            rounded-full
-            border
-            border-cyan-400/50
-            bg-white/5
-            backdrop-blur-xl
-            text-cyan-300
-            font-['Exo_2']
-            text-lg
-            uppercase
-            tracking-[3px]
-            font-bold
-            transition-all
-            duration-500
-            hover:scale-105
-            hover:text-black
-            "
-          >
-            {/* Fill Animation */}
-            <span
-              className="
-              absolute
-              inset-0
-              w-0
-              bg-cyan-400
-              transition-all
-              duration-500
-              group-hover:w-full
-              "
-            />
+  onClick={() => {
+    document
+      .getElementById("events")
+      ?.scrollIntoView({ behavior: "smooth" });
+  }}
+  className="
+  group
+  relative
+  px-10
+  py-4
+  rounded-full
+  border
+  border-cyan-400
+  text-cyan-300
+  text-lg
+  font-bold
+  tracking-wide
+  overflow-hidden
+  transition-all
+  duration-500
+  hover:text-black
+  hover:scale-105
+  "
+>
 
-            <span className="relative z-10">
-              Explore Events
-            </span>
-          </button>
+  {/* Fill animation */}
+  <span
+    className="
+    absolute
+    inset-0
+    w-0
+    bg-cyan-400
+    transition-all
+    duration-500
+    group-hover:w-full
+    "
+  />
+
+  <span className="relative z-10">
+    EXPLORE EVENTS
+  </span>
+
+</button>
         </motion.div>
 
         {/* Scroll Indicator */}
