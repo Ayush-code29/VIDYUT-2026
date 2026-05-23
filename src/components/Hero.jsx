@@ -5,7 +5,7 @@ import './index.css'
 export default function Hero() {
   return (
     <section
-    id="hero"
+    id="home"
       className="
       relative
       min-h-screen

@@ -3,12 +3,11 @@ import React from "react";
 import logo from "./logo.png";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { FaInstagram, FaLinkedin, FaGithub } from "react-icons/fa";
-import dev from "./developer.jpeg"; 
+import { FaInstagram, FaLinkedin } from "react-icons/fa";
 
 
 export default function Footer() {
-    const [showDev, setShowDev] = useState(false);
+    
 
   const scrollTop = () => {
     window.scrollTo({

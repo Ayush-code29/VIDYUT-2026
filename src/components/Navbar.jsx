@@ -9,7 +9,7 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
 
   const menuItems = [
-    { name: "HOME", id: "hero" },
+    { name: "HOME", id: "home" },
     { name: "EVENTS", id: "events" },
     { name: "PROJECTS", id: "projects" },
     { name: "TEAM", id: "team" },
@@ -201,7 +201,7 @@ export default function Navbar() {
   font-bold
   tracking-[2px]
   uppercase
-  transition-all
+  transition-all-+-
   duration-500
   hover:shadow-[0_0_30px_rgba(34,211,238,0.4)]
   "
