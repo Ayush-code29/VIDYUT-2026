@@ -47,7 +47,7 @@ export default function Navbar() {
         className={`
         relative
         w-full
-        max-w-7xl
+        max-w-full
         h-[85px]
         rounded-2xl
         border
